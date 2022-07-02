@@ -1,0 +1,17 @@
+{
+  "name": "auth-bcrypt",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "ShotaKarato <theseuta@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18"
+  }
+}
