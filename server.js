@@ -1,4 +1,5 @@
 const express = require("express");
+const connect = require("./db/connect");
 const app = express();
 const port = process.env.PORT || 4000;
 
@@ -8,6 +9,7 @@ app.use(express.json());
 app.use("/signup", require("./routes/signup"));
 app.use("/login", require("./routes/login"));
 
-app.listen(port, () => {
+app.listen(port, async () => {
   console.log(`🚀 Server is running on ${port}`);
+  await connect();
 });
