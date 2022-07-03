@@ -29,13 +29,13 @@ As the above description says, non relational database stores information in a q
 Here are some of concepts you might want to familiarise yourself with.
 
 > 💡 **Collections**\
-> ‘Collections’ in Mongo are equivalent to tables in relational databases. They can hold multiple JSON documents.\
+> ‘Collections’ in Mongo are equivalent to tables in relational databases. They can hold multiple JSON documents.
 >
 > 💡 **Documents**\
-> ‘Documents’ are equivalent to records or rows of data in SQL. In MongoDB they are stored in the format of BSON format. (BSON is type-rich version of JSON)\
+> ‘Documents’ are equivalent to records or rows of data in SQL. In MongoDB they are stored in the format of BSON format. (BSON is type-rich version of JSON)
 >
 > 💡 **Schema**\
-> While Mongo is schema-less, SQL defines a schema via the table definition. A Mongoose ‘schema’ is a document data structure (or shape of the document) that is enforced via the application layer. (**Always remember, it’s just a blueprint of a document which describes how the data is structured in that document**)\
+> While Mongo is schema-less, SQL defines a schema via the table definition. A Mongoose ‘schema’ is a document data structure (or shape of the document) that is enforced via the application layer. (**Always remember, it’s just a blueprint of a document which describes how the data is structured in that document**)
 >
 > 💡 **Models**\
 > ‘Models’ are higher-order constructors that take a schema and create an instance of a document equivalent to records in a relational database.
