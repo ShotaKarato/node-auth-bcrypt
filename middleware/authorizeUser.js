@@ -2,6 +2,7 @@ const { verifyJWT } = require("../utils/jwt.utils");
 
 const authorizeUser = (req, res, next) => {
   const authHeader = req.headers.authorization;
+  // multiples ways to rip "Bearer" from authHeader e.g. const token = authHeader && authHeader.split(" ")[1];
   const token = authHeader && authHeader.replace(/Bearer /, "");
 
   // no token attached
