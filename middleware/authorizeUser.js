@@ -9,13 +9,13 @@ const authorizeUser = (req, res, next) => {
 
   const {
     valid,
-    decoded: { name, id },
+    decoded: { id },
   } = verifyJWT(token);
 
   // invalid token
   if (!valid) return res.status(401).send("Invalid token");
 
-  req.user = { name, id };
+  req.body = { ...req.body, id };
   next();
 };
 module.exports = {
