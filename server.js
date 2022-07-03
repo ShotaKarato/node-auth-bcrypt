@@ -8,6 +8,7 @@ app.use(express.json());
 // routes
 app.use("/signup", require("./routes/signup"));
 app.use("/login", require("./routes/login"));
+app.use("/items", require("./routes/itemsList"));
 
 app.listen(port, async () => {
   console.log(`🚀 Server is running on ${port}`);
