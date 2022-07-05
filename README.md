@@ -120,7 +120,53 @@ const createUser = async (name, email, age) => {
   If schema is a blueprint of a document, document is probably a blueprint of a model. Document should be describing what properties an object (an instance of document, in other word; an actual data) which will later gets created by model should have. That is why document is used as interface in TypeScript. It makes sure an instance of document will have certain properties and methods.
 -
 
-### bcrypt
+### [bcrypt](https://github.com/kelektiv/node.bcrypt.js)
+
+bcrypt is a library to help users hash their passwords. With bcrypt we can store users password in more secure format.
+
+But how?
+
+Not only hashing a password, bcrypt can also generate something called **salt**, which basically is a series of random characters. bcrypt combines a hashed password with this salt, making it really hard to crack.
+
+**Encrypting with bcrypt**
+
+```jsx
+const bcrypt = require("bcrypt");
+
+const encryptPassword = async (originalPassword) => {
+  try {
+    const hashedPassword = await bcrypt.hash(originalPassword, 10);
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+
+// The other way of doing it
+
+// const encryptPassword = async (originalPassword) => {
+//	const salt = await bcrypt.genSalt();
+//  const hashedPassword = await bcrypt.hash(originalPassword, salt);
+// }
+```
+
+Encrypting a password takes some time so `bcrypt.hash` returns a promise. Make sure you put it in a async function at the implementation. You can also generate a salt separately with `bcrypt.genSalt` method. It will take saltRounds as its parameter which is by default set to 10.
+
+**Decrypting with bcrypt**
+
+Once you encrypt a password, it will probably be decrypted at some point.
+
+```jsx
+const bcrypt = require("bcrypt");
+
+const comparePassword = async (originalPassword, encryptedPassword) => {
+  const isPassowordCorrect = await bcrypt.compare(
+    originalPassword,
+    encryptedPassword
+  );
+};
+```
+
+`bcrypt.compare` literally compares an original password with an encrypted one and then it returns `true` if the password a user provided matches the encrypted one. Otherwise it would return `false`.
 
 ### Authentication and Authorization
 
