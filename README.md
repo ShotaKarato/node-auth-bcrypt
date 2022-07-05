@@ -118,7 +118,6 @@ const createUser = async (name, email, age) => {
 - Once it is combined with TypeScript, the difference between Document and Schema seemed pretty blurry to me.
   But always remember a schema is just a blueprint of a document. It is essentially the same thing as setting columns of a table in a relational database. It is pretty much describing what each column is like.
   If schema is a blueprint of a document, document is probably a blueprint of a model. Document should be describing what properties an object (an instance of document, in other word; an actual data) which will later gets created by model should have. That is why document is used as interface in TypeScript. It makes sure an instance of document will have certain properties and methods.
--
 
 ### [bcrypt](https://github.com/kelektiv/node.bcrypt.js)
 
